@@ -35,6 +35,32 @@ app.post("/enviar", async (req, res) => {
   }
 });
 
+app.get("/test-email", async (req, res) => {
+  try {
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
+
+    const mailOptions = {
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      subject: "Prueba desde Render",
+      text: "Este es un correo de prueba enviado directamente desde el servidor.",
+    };
+
+    await transporter.sendMail(mailOptions);
+    res.send("✅ Correo de prueba enviado con éxito");
+  } catch (error) {
+    console.error("❌ Error enviando correo:", error);
+    res.send(`❌ Error enviando correo: ${error.message}`);
+  }
+});
+
+
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en puerto ${PORT}`);
 });
