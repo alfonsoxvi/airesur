@@ -7,8 +7,32 @@
   <style>
     body { font-family: Arial, sans-serif; background: #f2f2f2; margin: 0; padding: 0; }
     header { background: #003366; color: white; padding: 20px; text-align: center; }
-    section { padding: 40px; max-width: 800px; margin: auto; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    section { padding: 40px; max-width: 900px; margin: auto; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
     h1, h2 { color: #003366; }
+    
+    /* Diseño de la sección de empresa */
+    .empresa {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    .empresa img {
+      flex: 1 1 300px;
+      max-width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    }
+    .empresa-texto {
+      flex: 1 1 300px;
+    }
+    .empresa-texto p {
+      font-size: 1.1em;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    /* Formulario */
     .formulario label { display: block; margin-top: 15px; font-weight: bold; }
     .formulario input, .formulario textarea {
       width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px;
@@ -17,6 +41,7 @@
       background: #003366; color: white; border: none; margin-top: 20px; cursor: pointer; transition: 0.3s;
     }
     .formulario input[type="submit"]:hover { background: #0055aa; }
+    
     footer { text-align: center; padding: 20px; background: #003366; color: white; margin-top: 40px; }
   </style>
 </head>
@@ -28,7 +53,14 @@
 
   <section>
     <h2>¿Quiénes somos?</h2>
-    <p>Somos una empresa dedicada a brindar soluciones en climatización para hogares y empresas. Contamos con años de experiencia y técnicos certificados.</p>
+    <div class="empresa">
+      <img src="https://images.unsplash.com/photo-1594026112284-ec8a48c1b0ce?w=800" alt="Técnico instalando aire acondicionado">
+      <div class="empresa-texto">
+        <p>En <strong>Aires del Sur</strong> nos especializamos en soluciones de climatización para hogares y empresas. 
+        Contamos con un equipo de técnicos certificados, años de experiencia en el sector y un compromiso absoluto con la satisfacción de nuestros clientes.</p>
+        <p>Ofrecemos venta, instalación y mantenimiento de equipos de aire acondicionado, siempre utilizando las mejores marcas y asegurando un servicio rápido, seguro y de calidad.</p>
+      </div>
+    </div>
 
     <h2>Contacto</h2>
     <form class="formulario" action="/enviar" method="POST">
