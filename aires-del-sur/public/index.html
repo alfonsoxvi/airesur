@@ -8,7 +8,7 @@
     body { font-family: Arial, sans-serif; background: #f2f2f2; margin: 0; padding: 0; }
     header { background: #003366; color: white; padding: 20px; text-align: center; }
     section { padding: 40px; max-width: 900px; margin: auto; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    h1, h2 { color: #00336; }
+    h1, h2 { color: #003366; }
     
     /* Diseño de la sección de empresa */
     .empresa {
@@ -45,6 +45,30 @@
     .formulario input[type="submit"]:hover { background: #0055aa; }
     
     footer { text-align: center; padding: 20px; background: #003366; color: white; margin-top: 40px; }
+
+    /* Botón flotante WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+      z-index: 1000;
+      text-decoration: none;
+    }
+    .whatsapp-float img {
+      width: 35px;
+      height: 35px;
+    }
+    .whatsapp-float:hover {
+      background-color: #1ebe5d;
+    }
   </style>
 </head>
 <body>
@@ -79,6 +103,13 @@
   </div>
 
   <h2>Contacto</h2>
+
+  <a href="https://wa.me/59899781948?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios." 
+     target="_blank" 
+     style="display:inline-block; background:#25D366; color:white; padding:12px 20px; border-radius:5px; font-size:1.2em; text-decoration:none; margin-bottom:20px;">
+      💬 Contactar por WhatsApp
+  </a>
+
   <form class="formulario" action="/enviar" method="POST">
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" required />
@@ -92,6 +123,13 @@
     <input type="submit" value="Enviar mensaje" />
   </form>
 </section>
+
+<!-- Botón flotante de WhatsApp -->
+<a href="https://wa.me/59899781948?text=Hola%2C%20estoy%20interesado%20en%20sus%20servicios." 
+   class="whatsapp-float" 
+   target="_blank">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</a>
 
 <footer>
   &copy; 2025 Cold Service - Todos los derechos reservados.
